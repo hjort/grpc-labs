@@ -1,2 +1,2 @@
 pip freeze
-deactivate
+conda deactivate
