@@ -1,0 +1,6 @@
+python -m pip install grpcio
+python -m pip install grpcio-tools
+
+git clone -b v1.38.0 https://github.com/grpc/grpc
+cd grpc/examples/python/route_guide
+
