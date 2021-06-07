@@ -1,9 +1,10 @@
 FROM python
 
-RUN mkdir /service
+RUN mkdir -p /service
 
 COPY protobufs/ /service/protobufs/
-COPY marketplace/*.py marketplace/templates marketplace/requirements.txt /service/marketplace/
+COPY marketplace/*.py marketplace/requirements.txt /service/marketplace/
+COPY marketplace/templates/*.html /service/marketplace/templates/
 #COPY marketplace/ /service/marketplace/
 
 WORKDIR /service/marketplace
