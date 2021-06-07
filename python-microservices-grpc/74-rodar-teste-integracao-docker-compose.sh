@@ -1,0 +1,1 @@
+docker-compose exec marketplace pytest marketplace_integration_test.py
