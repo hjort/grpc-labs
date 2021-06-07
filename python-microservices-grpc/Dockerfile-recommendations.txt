@@ -1,4 +1,5 @@
-FROM python
+FROM python:3.8-slim
+#FROM python
 
 RUN mkdir /service
 COPY protobufs/ /service/protobufs/
@@ -8,7 +9,7 @@ COPY recommendations/*.py recommendations/requirements.txt /service/recommendati
 
 WORKDIR /service/recommendations
 
-RUN python -m pip install --upgrade pip
+#RUN python -m pip install --upgrade pip
 RUN python -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 RUN python -m grpc_tools.protoc -I ../protobufs --python_out=. \
            --grpc_python_out=. ../protobufs/recommendations.proto
