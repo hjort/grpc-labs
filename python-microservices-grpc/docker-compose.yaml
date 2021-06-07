@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+
+    marketplace:
+        build:
+            context: .
+            dockerfile: Dockerfile-marketplace.txt
+        environment:
+            RECOMMENDATIONS_HOST: recommendations
+        image: grpc-marketplace
+        networks:
+            - microservices
+        ports:
+            - 5000:5000
+
+    recommendations:
+        build:
+            context: .
+            dockerfile: Dockerfile-recommendations.txt
+        image: grpc-recommendations
+        networks:
+            - microservices
+
+networks:
+    microservices:
